@@ -3,6 +3,15 @@ package com.example.demo.appuser;
 import java.util.Collection;
 import java.util.Collections;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+import org.hibernate.tool.schema.extract.internal.SequenceNameExtractorImpl;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,16 +21,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+@Getter
+@Setter
+@NoArgsConstructor
+@EqualsAndHashCode
+@Entity
+
+
 public class Appuser implements UserDetails {
 	
-	@Getter
-	@Setter
-	@NoArgsConstructor
-	@EqualsAndHashCode
+	@Id
+	@SequenceGenerator(
+			name= "student_sequence",
+			sequenceName= "student_sequence",
+			allocationSize = 1
+			)
+	@GeneratedValue(
+			strategy = GenerationType.SEQUENCE,
+			generator = "student_sequence"
+			)
 	private long id;
 	private String username;
 	private String email;
 	private String password;
+	@Enumerated(EnumType.STRING)
 	private UserRole AppUserRole;
 	private boolean locked;
 	private boolean enabled;
