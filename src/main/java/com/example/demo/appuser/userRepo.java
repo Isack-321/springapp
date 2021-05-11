@@ -1,13 +1,11 @@
 package com.example.demo.appuser;
 
 import java.util.Optional;
-
-import javax.transaction.Transactional;
-
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-@org.springframework.transaction.annotation.Transactional(readOnly = true)
+@Transactional(readOnly = true)
 public interface userRepo {
 
 	Optional<Appuser> findByEmail(String email);

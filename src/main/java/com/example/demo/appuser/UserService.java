@@ -1,7 +1,5 @@
 package com.example.demo.appuser;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
-
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

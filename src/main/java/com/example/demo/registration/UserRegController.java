@@ -12,7 +12,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class UserRegController {
 	
-	
+	private registrationService servicee;
+	 
 public String Regcontrola(@RequestBody Registration request ) {
 	
 	return registrationService.regRequest(request);
