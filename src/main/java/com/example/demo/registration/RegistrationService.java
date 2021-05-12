@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2Clien
 import org.springframework.stereotype.Service;
 
 @Service
-public class registrationService {
+public class RegistrationService {
 
 	public static String regRequest(Registration request) {
 		// TODO Auto-generated method stub
