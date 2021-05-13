@@ -1,8 +1,10 @@
 package com.example.demo.appuser;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -46,10 +48,11 @@ public class Appuser implements UserDetails {
 					private String password;
 					@Enumerated(EnumType.STRING)
 					private UserRole AppUserRole;
-					private boolean locked;
-					private boolean enabled;
+					private boolean locked = false;
+					private boolean enabled= false;
+					@Column(name = "local_date_time", columnDefinition = "TIMESTAMP") private LocalDateTime localDateTime;
 
-	
+					public Appuser() {}
 	
 		public Appuser(String firstname, String lastname, String email, String password, UserRole appUserRole) {
 			super();

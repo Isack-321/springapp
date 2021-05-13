@@ -39,7 +39,7 @@ public class UserService implements UserDetailsService {
 	
 		appuser.setPassword(encodedpass);
 		userRepo.save(appuser);
-		return null;
+		return "works!";
 		
 		
 	}
