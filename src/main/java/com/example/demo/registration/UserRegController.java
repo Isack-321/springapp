@@ -1,11 +1,9 @@
 package com.example.demo.registration;
 
-import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientProperties.Registration;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.demo.registration.RegistrationService;
-
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -13,11 +11,12 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class UserRegController {
 	
-	private RegistrationService servicee;
+	private final RegistrationService registrationService = new RegistrationService();
 	 
-public String Regcontrola(@RequestBody Registration request ) {
+	@PostMapping
+	public String Regcontrola(@RequestBody RegistrationRequest request ) {
 	
-	return servicee.regRequest(request);
+	return registrationService.register(request);
 }
 	
 	
