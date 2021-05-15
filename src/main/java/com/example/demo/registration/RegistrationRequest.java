@@ -2,7 +2,6 @@ package com.example.demo.registration;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.ToString;
 
 
@@ -12,10 +11,11 @@ import lombok.ToString;
 @ToString
 public class RegistrationRequest {
 
-	private final String firstname;
-	private final String lastname;
-	private final String email;
-	private final String password;
+	private final String firstname=null;
+	private final String lastname=null;
+	private final String email=null;
+	private final String password=null;
+	
 	public String getFirstname() {
 		return firstname;
 	}

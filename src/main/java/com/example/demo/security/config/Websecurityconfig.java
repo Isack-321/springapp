@@ -43,8 +43,8 @@ public class Websecurityconfig extends WebSecurityConfigurerAdapter {
 
 	
 	@Bean
-	DaoAuthenticationProvider DaoAuthenticationProvider() {
-		DaoAuthenticationProvider daop= new org.springframework.security.authentication.dao.DaoAuthenticationProvider();
+	public DaoAuthenticationProvider DaoAuthenticationProvider() {
+		DaoAuthenticationProvider daop= new DaoAuthenticationProvider();
 		daop.setPasswordEncoder(bcryptpassencod);
 		daop.setUserDetailsService(userservice);
 		

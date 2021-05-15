@@ -4,8 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.appuser.UserRole;
 import com.example.demo.appuser.UserService;
-
-import com.example.demo.appuser.Appuser;
+import com.example.demo.appuser.AppUser;
 import lombok.AllArgsConstructor;
 
 @Service
@@ -20,7 +19,7 @@ public class RegistrationService {
 		// TODO Auto-generated method stub
 		
 		
-		boolean IsvalidEmail = emailvalidator.test(request.getEmail() );
+		boolean IsvalidEmail= emailvalidator.test(request.getEmail() );
 
 				if(!IsvalidEmail) {
 					
@@ -30,7 +29,7 @@ public class RegistrationService {
 		
 					return userservice.signupuser(
 							
-							new Appuser (
+							new AppUser (
 											request.getFirstname(),
 											request.getLastname(),
 											request.getEmail(),
